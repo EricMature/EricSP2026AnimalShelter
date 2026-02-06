@@ -57,16 +57,16 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 15);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 3;
             this.label2.Text = "The Animal\'s &Weight";
             // 
-            // txtAnimalWeight
+            // txtAnimalHeight
             // 
-            this.txtAnimalWeight.Location = new System.Drawing.Point(274, 117);
-            this.txtAnimalWeight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtAnimalWeight.Name = "txtAnimalWeight";
-            this.txtAnimalWeight.Size = new System.Drawing.Size(228, 25);
-            this.txtAnimalWeight.TabIndex = 3;
+            this.txtAnimalHeight.Location = new System.Drawing.Point(274, 56);
+            this.txtAnimalHeight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnimalHeight.Name = "txtAnimalHeight";
+            this.txtAnimalHeight.Size = new System.Drawing.Size(228, 25);
+            this.txtAnimalHeight.TabIndex = 2;
             // 
             // btnCalculate
             // 
@@ -86,16 +86,16 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 15);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 1;
             this.label3.Text = "The Animal\'s &Height";
             // 
-            // txtAnimalHeight
+            // txtAnimalWeight
             // 
-            this.txtAnimalHeight.Location = new System.Drawing.Point(274, 59);
-            this.txtAnimalHeight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtAnimalHeight.Name = "txtAnimalHeight";
-            this.txtAnimalHeight.Size = new System.Drawing.Size(228, 25);
-            this.txtAnimalHeight.TabIndex = 2;
+            this.txtAnimalWeight.Location = new System.Drawing.Point(274, 117);
+            this.txtAnimalWeight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnimalWeight.Name = "txtAnimalWeight";
+            this.txtAnimalWeight.Size = new System.Drawing.Size(228, 25);
+            this.txtAnimalWeight.TabIndex = 4;
             // 
             // lstOut
             // 
@@ -105,7 +105,7 @@
             this.lstOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lstOut.Name = "lstOut";
             this.lstOut.Size = new System.Drawing.Size(451, 109);
-            this.lstOut.TabIndex = 6;
+            this.lstOut.TabIndex = 5;
             this.lstOut.TabStop = false;
             // 
             // btnClear
@@ -138,10 +138,10 @@
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lstOut);
-            this.Controls.Add(this.txtAnimalHeight);
+            this.Controls.Add(this.txtAnimalWeight);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCalculate);
-            this.Controls.Add(this.txtAnimalWeight);
+            this.Controls.Add(this.txtAnimalHeight);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
