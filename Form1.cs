@@ -36,11 +36,21 @@ namespace EricSP2026AnimalShelter
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtAnimalName.Clear();
             txtAnimalWeight.Clear();
             txtAnimalHeight.Clear();
             lstOut.Items.Clear();
+            txtAnimalName.Focus();
 
+        }
 
+        private void txtAnimalName_Enter(object sender, EventArgs e)
+        {
+            txtAnimalName.BackColor = Color.Beige;
+        }
+        private void txtAnimalName_Leave(object sender, EventArgs e)
+        {
+            txtAnimalName.BackColor = SystemColors.Window;
         }
         //Event Procedure that will run when the user clicks on the calculate button
 
