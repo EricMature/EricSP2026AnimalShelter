@@ -19,6 +19,30 @@ namespace EricSP2026AnimalShelter
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            //ICA 3
+            //Declare Variables
+            // going to come from the user
+            double animalHeight;
+            double animalWeight;
+            string animalName;
+            double animalBMI;
+
+            //For string var just set var to text property
+            animalName = txtAnimalName.Text;
+
+            //For numerics you must convert a string to a number
+            animalHeight = double.Parse(txtAnimalHeight.Text);
+            animalWeight = double.Parse(txtAnimalWeight.Text);
+
+            //do calculation
+            //for me that is price of service (walk) multiplied by number of times per time
+            animalBMI = animalWeight / animalHeight;
+
+            //output to list box and make sure it is formatted
+            //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C"));
+            //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C3"));
+            lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString());
+
 
         }
 
