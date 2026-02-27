@@ -26,31 +26,72 @@ namespace EricSP2026AnimalShelter
             double animalWeight;
             string animalName;
             double animalBMI;
+            //ICA 4
+            bool heightGood;
+            bool weightGood;
+            bool nameGood;
 
             //For string var just set var to text property
             animalName = txtAnimalName.Text;
 
             //For numerics you must convert a string to a number
-            animalHeight = double.Parse(txtAnimalHeight.Text);
-            animalWeight = double.Parse(txtAnimalWeight.Text);
+            //animalHeight = double.Parse(txtAnimalHeight.Text);
+            //animalWeight = double.Parse(txtAnimalWeight.Text);
+            heightGood = double.TryParse(txtAnimalHeight.Text, out animalHeight);
+            weightGood = double.TryParse(txtAnimalWeight.Text, out animalWeight);
 
-            //do calculation
-            //for me that is price of service (walk) multiplied by number of times per time
-            //output to list box and make sure it is formatted
-            animalBMI = animalWeight / (animalHeight * animalHeight);
-            lstOut.Items.Add("The Animal's Name is: " + animalName);
-            //lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N0"));
-            //lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N0"));
-            lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N1"));
-            lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N1"));
+            if (animalName == "")            
+            {
+                nameGood = false;
+            }
+            else
+            {
+                nameGood = true;
+            }
+            //alternate way 
+            //nameGood = animalName != ""
 
-            //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C"));
-            //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C3"));
-            lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("N2"));
-            //This gaves fouce to the clear button
-            btnClear.Focus();
+            if (nameGood)
+            {
+                if (heightGood && weightGood)
+                {
+                    //do calculation
+                    //for me that is price of service (walk) multiplied by number of times per time
+                    //output to list box and make sure it is formatted
+                    animalBMI = animalWeight / (animalHeight * animalHeight);
+                    lstOut.Items.Add("The Animal's Name is: " + animalName);
+                    //lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N0"));
+                    //lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N0"));
+                    lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N1"));
+                    lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N1"));
 
+                    //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C"));
+                    //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C3"));
+                    lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("N2"));
+                    //This gaves fouce to the clear button
+                    btnClear.Focus();
+                }
+                else
+                {
+                    if (!heightGood)
+                    {
+                        lstOut.Items.Add("Please put an valid value for Animal's Height!");
+                    }
+                    else if (!weightGood)
+                    {
+                        lstOut.Items.Add("Please put an valid value for Animal's Weight! ");
+                    }
+                }
 
+            }
+            else
+            {
+                if (!nameGood)
+                {
+                    lstOut.Items.Add("Please put an valid value for Animal's Name! ");
+                }
+
+            }
         }
 
 
@@ -62,7 +103,18 @@ namespace EricSP2026AnimalShelter
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult buttonSlelected;
+            buttonSlelected = MessageBox.Show("Do you really want to quit?",
+                                                "Exiting...",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+            if (buttonSlelected == DialogResult.Yes) 
+            {
+                //ICA 2
+                this.Close();
+            }
+            
+           
         }
 
         private void btnClear_Click(object sender, EventArgs e)
