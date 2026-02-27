@@ -51,38 +51,23 @@ namespace EricSP2026AnimalShelter
             //alternate way 
             //nameGood = animalName != ""
 
-            if (nameGood)
+            if (nameGood && heightGood && weightGood)
             {
-                if (heightGood && weightGood)
-                {
-                    //do calculation
-                    //for me that is price of service (walk) multiplied by number of times per time
-                    //output to list box and make sure it is formatted
-                    animalBMI = animalWeight / (animalHeight * animalHeight);
-                    lstOut.Items.Add("The Animal's Name is: " + animalName);
-                    //lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N0"));
-                    //lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N0"));
-                    lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N1"));
-                    lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N1"));
+                //do calculation
+                //for me that is price of service (walk) multiplied by number of times per time
+                //output to list box and make sure it is formatted
+                animalBMI = animalWeight / (animalHeight * animalHeight);
+                lstOut.Items.Add("The Animal's Name is: " + animalName);
+                //lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N0"));
+                //lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N0"));
+                lstOut.Items.Add("The Animal's Height is: " + animalHeight.ToString("N1"));
+                lstOut.Items.Add("The Animal's Weight is: " + animalWeight.ToString("N1"));
 
-                    //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C"));
-                    //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C3"));
-                    lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("N2"));
-                    //This gaves fouce to the clear button
-                    btnClear.Focus();
-                }
-                else
-                {
-                    if (!heightGood)
-                    {
-                        lstOut.Items.Add("Please put an valid value for Animal's Height!");
-                    }
-                    else if (!weightGood)
-                    {
-                        lstOut.Items.Add("Please put an valid value for Animal's Weight! ");
-                    }
-                }
-
+                //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C"));
+                //lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("C3"));
+                lstOut.Items.Add("The Animal's BMI is: " + animalBMI.ToString("N2"));
+                //This gaves fouce to the clear button
+                btnClear.Focus();
             }
             else
             {
@@ -90,7 +75,14 @@ namespace EricSP2026AnimalShelter
                 {
                     lstOut.Items.Add("Please put an valid value for Animal's Name! ");
                 }
-
+                else if (!heightGood)
+                {
+                    lstOut.Items.Add("Please put an valid value for Animal's Height!");
+                }
+                else if (!weightGood)
+                {
+                    lstOut.Items.Add("Please put an valid value for Animal's Weight! ");
+                }
             }
         }
 
